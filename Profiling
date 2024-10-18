@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+data=pd.read_csv('Tunisair_flights_dataset (1).csv')
+data.head()
+data.info()
+print(data.isnull().sum())
+data.describe()
+!pip install ydata-profiling
+
+from ydata_profiling import ProfileReport
+
+profile = ProfileReport(data, title="Pandas Profiling Report")
+profile.to_notebook_iframe()
